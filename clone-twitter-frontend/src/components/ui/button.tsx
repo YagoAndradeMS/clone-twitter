@@ -12,6 +12,7 @@ export const Button = ({ label, onClick, size }: Props) => {
     ${size === 2 && 'h-10 text-md'}
     ${size === 3 && 'h-7 text-xs'}
     `}
+      onClick={onClick}
     >
       {label}
     </div>
