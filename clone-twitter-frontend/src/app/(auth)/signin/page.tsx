@@ -13,7 +13,7 @@ export default function page() {
 
       <div className='flex flex-col justify-center items-center gap-1 md:flex-row'>
         <div className='text-gray-500'>Ainda não tem uma conta?</div>
-        <Link href={'/siginup'} className='hover:underline'>
+        <Link href={'/signup'} className='hover:underline'>
           Cadastre-se
         </Link>
       </div>
