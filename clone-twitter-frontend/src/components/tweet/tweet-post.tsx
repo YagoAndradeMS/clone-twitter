@@ -4,7 +4,7 @@ import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button } from '../ui/button';
 
-export const TweetPort = () => {
+export const TweetPost = () => {
   const handleImageUpload = () => {};
 
   const handlePostClick = () => {};
