@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import * as pingController from '../controllers/ping.controller';
 import * as authController from '../controllers/auth.controller';
+import * as tweetController from '../controllers/tweet.controller';
 import { verifyJWT } from '../utils/jwt';
 
 export const mainRouter = Router();
@@ -14,7 +15,7 @@ mainRouter.post('/auth/signup', authController.signup);
 mainRouter.post('/auth/signin', authController.signin);
 
 // Rotas para tweets
-// mainRouter.post('/tweet');
+mainRouter.post('/tweet', verifyJWT, tweetController.addTweet);
 // mainRouter.get('/tweet/:id'); // tweet/123
 // mainRouter.get('/tweet/:id/answers');
 // mainRouter.post('/tweet/:id/like');
