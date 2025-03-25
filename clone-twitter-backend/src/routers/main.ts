@@ -18,7 +18,7 @@ mainRouter.post('/auth/signin', authController.signin);
 mainRouter.post('/tweet', verifyJWT, tweetController.addTweet);
 mainRouter.get('/tweet/:id', verifyJWT, tweetController.getTweet); // tweet/123
 mainRouter.get('/tweet/:id/answers', verifyJWT, tweetController.getAnsers);
-// mainRouter.post('/tweet/:id/like');
+mainRouter.post('/tweet/:id/like', verifyJWT, tweetController.likeToggle);
 
 // Rotas para os usuarios
 // mainRouter.get('/user/:slug');
