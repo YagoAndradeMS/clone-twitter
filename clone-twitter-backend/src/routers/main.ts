@@ -10,7 +10,7 @@ mainRouter.get('/ping', pingController.ping);
 
 // Rotas para login e registro
 mainRouter.post('/auth/signup', authController.signup);
-// mainRouter.post('/auth/signin');
+mainRouter.post('/auth/signin', authController.signin);
 
 // Rotas para tweets
 // mainRouter.post('/tweet');
