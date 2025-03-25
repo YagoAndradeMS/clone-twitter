@@ -1,12 +1,13 @@
 import { Router } from 'express';
 import * as pingController from '../controllers/ping.controller';
 import * as authController from '../controllers/auth.controller';
+import { verifyJWT } from '../utils/jwt';
 
 export const mainRouter = Router();
 
 // Rotas de teste
 mainRouter.get('/ping', pingController.ping);
-// mainRouter.get('/private-ping', pingController.ping);
+mainRouter.get('/private-ping', verifyJWT, pingController.privatePing);
 
 // Rotas para login e registro
 mainRouter.post('/auth/signup', authController.signup);
