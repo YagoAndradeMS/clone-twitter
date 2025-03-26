@@ -5,9 +5,11 @@ import * as tweetController from '../controllers/tweet.controller';
 import * as userController from '../controllers/user.controller';
 import * as feedController from '../controllers/feed.controller';
 import * as searchController from '../controllers/search.controller';
+import * as trendController from '../controllers/trend.controller';
 import { verifyJWT } from '../utils/jwt';
 
 export const mainRouter = Router();
+trendController;
 
 // Rotas de teste
 mainRouter.get('/ping', pingController.ping);
@@ -34,5 +36,5 @@ mainRouter.put('/user', verifyJWT, userController.updateUser);
 // Rotas do sistema
 mainRouter.get('/feed', verifyJWT, feedController.getFeed);
 mainRouter.get('/search', verifyJWT, searchController.searchTweets);
-// mainRouter.get('/trending');
+mainRouter.get('/trending', verifyJWT, trendController.getTrends);
 // mainRouter.get('/suggestions');
