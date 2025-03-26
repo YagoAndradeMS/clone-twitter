@@ -3,6 +3,8 @@ import * as pingController from '../controllers/ping.controller';
 import * as authController from '../controllers/auth.controller';
 import * as tweetController from '../controllers/tweet.controller';
 import * as userController from '../controllers/user.controller';
+import * as feedController from '../controllers/feed.controller';
+import * as searchController from '../controllers/search.controller';
 import { verifyJWT } from '../utils/jwt';
 
 export const mainRouter = Router();
@@ -30,7 +32,7 @@ mainRouter.put('/user', verifyJWT, userController.updateUser);
 // mainRouter.put('/user/cover');
 
 // Rotas do sistema
-// mainRouter.get('/feed');
-// mainRouter.get('/search');
+mainRouter.get('/feed', verifyJWT, feedController.getFeed);
+mainRouter.get('/search', verifyJWT, searchController.searchTweets);
 // mainRouter.get('/trending');
 // mainRouter.get('/suggestions');

@@ -40,7 +40,7 @@ export const getUserTweets = async (req: ExtendedRequest, res: Response) => {
     return;
   }
 
-  let perPage = 2;
+  let perPage = 10;
   let currentPage = safeData.data.page ?? 0;
 
   const tweets = await findTweetsByUser(slug, currentPage, perPage);
