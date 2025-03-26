@@ -6,6 +6,7 @@ import * as userController from '../controllers/user.controller';
 import * as feedController from '../controllers/feed.controller';
 import * as searchController from '../controllers/search.controller';
 import * as trendController from '../controllers/trend.controller';
+import * as suggestionsController from '../controllers/suggestion.controller';
 import { verifyJWT } from '../utils/jwt';
 
 export const mainRouter = Router();
@@ -37,4 +38,4 @@ mainRouter.put('/user', verifyJWT, userController.updateUser);
 mainRouter.get('/feed', verifyJWT, feedController.getFeed);
 mainRouter.get('/search', verifyJWT, searchController.searchTweets);
 mainRouter.get('/trending', verifyJWT, trendController.getTrends);
-// mainRouter.get('/suggestions');
+mainRouter.get('/suggestions', verifyJWT, suggestionsController.getSuggestion);
