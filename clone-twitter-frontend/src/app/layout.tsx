@@ -13,8 +13,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-br'>
-      <body>{children}</body>
-      <Toaster richColors />
+      <body>
+        {children}
+
+        <Toaster richColors position='top-right' />
+      </body>
     </html>
   );
 }

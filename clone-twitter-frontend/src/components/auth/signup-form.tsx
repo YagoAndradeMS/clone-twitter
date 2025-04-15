@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { api } from '@/utils/api';
+import { checkApiError } from '@/utils/checkApiError';
+import { toast } from 'sonner';
 
 export const SignupForm = () => {
   const router = useRouter();
@@ -20,14 +22,12 @@ export const SignupForm = () => {
         password: passwordField,
       });
 
-      if (response.data.error) {
-        console.error(response.data.error);
-        return;
-      }
+      checkApiError(response);
 
       router.replace('/home');
     } catch (error) {
       console.error(error);
+      toast.error('Erro ao criar conta ' + error);
     }
   };
 

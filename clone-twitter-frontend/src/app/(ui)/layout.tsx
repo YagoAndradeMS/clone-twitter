@@ -41,7 +41,7 @@ export default function Layout({ children }: Props) {
           <RecommendationArea />
         </aside>
       </div>
-      <Toaster richColors />
+      <Toaster richColors position='top-right' />
     </main>
   );
 }
