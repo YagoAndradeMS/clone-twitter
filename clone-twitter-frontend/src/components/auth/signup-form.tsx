@@ -3,8 +3,8 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Input } from '../ui/input';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '../ui/button';
+import { api } from '@/utils/api';
 
 export const SignupForm = () => {
   const router = useRouter();
@@ -12,8 +12,23 @@ export const SignupForm = () => {
   const [emailField, setEmailField] = useState<string>('');
   const [passwordField, setPasswordField] = useState<string>('');
 
-  const handleEnterButton = () => {
-    router.replace('/home');
+  const handleEnterButton = async () => {
+    try {
+      const response = await api.post('/auth/signup', {
+        name: nameField,
+        email: emailField,
+        password: passwordField,
+      });
+
+      if (response.data.error) {
+        console.error(response.data.error);
+        return;
+      }
+
+      router.replace('/home');
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -21,19 +36,19 @@ export const SignupForm = () => {
       <Input
         placeholder='Digite o seu Nome'
         value={nameField}
-        onChange={t => setNameField(t)}
+        onChange={e => setNameField(e)}
       />
 
       <Input
         placeholder='Digite o seu Gmail'
         value={emailField}
-        onChange={t => setEmailField(t)}
+        onChange={e => setEmailField(e)}
       />
 
       <Input
         placeholder='Digite sua senha'
         value={passwordField}
-        onChange={t => setPasswordField(t)}
+        onChange={e => setPasswordField(e)}
         password
       />
 
