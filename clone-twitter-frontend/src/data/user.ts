@@ -1,4 +1,5 @@
 import { User } from '@/types/user';
+import { api } from '@/utils/api';
 
 export const user: User = {
   slug: 'bonieky',
