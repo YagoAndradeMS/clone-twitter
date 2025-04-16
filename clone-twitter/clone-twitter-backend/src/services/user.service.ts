@@ -135,7 +135,7 @@ export const getUserSuggestions = async (slug: string) => {
   WHERE
     slug NOT IN (${followingPlusMe.join(',')})
   ORDER BY RANDOM()
-  LIMIT 2;
+  LIMIT 4;
   `;
 
   for (let sugIndex in suggestions) {

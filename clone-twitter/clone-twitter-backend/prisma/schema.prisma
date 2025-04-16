@@ -18,8 +18,8 @@ model User {
   email    String  @unique
   password String
   name     String
-  avatar   String  @default("default.jpg")
-  cover    String  @default("default.jpg")
+  avatar   String  @default("https://ui-avatars.com/api/?background=random&name=Bonieky&Size=100")
+  cover    String  @default("postForY.png")
   bio      String?
   link     String?
 
