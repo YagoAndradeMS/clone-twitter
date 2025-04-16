@@ -1,5 +1,5 @@
 'use client';
-import { user } from '@/data/user';
+import { user } from '../../data/user';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button } from '../ui/button';

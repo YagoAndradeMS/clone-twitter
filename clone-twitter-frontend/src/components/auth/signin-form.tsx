@@ -4,8 +4,8 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
-import { api } from '@/utils/api';
-import { checkApiError } from '@/utils/checkApiError';
+import { api } from '../../utils/api';
+import { checkApiError } from '../../utils/checkApiError';
 import { toast } from 'sonner';
 
 export const SigninForm = () => {

@@ -1,7 +1,7 @@
-import { TweetItem } from '@/components/tweet/tweet-itm';
-import { GeneralHeader } from '@/components/ui/geberal-header';
-import { SearchInput } from '@/components/ui/search-input';
-import { tweet } from '@/data/tweet';
+import { TweetItem } from '../../../components/tweet/tweet-itm';
+import { GeneralHeader } from '../../../components/ui/geberal-header';
+import { SearchInput } from '../../../components/ui/search-input';
+import { tweet } from '../../../data/tweet';
 import { redirect } from 'next/navigation';
 
 type Props = {

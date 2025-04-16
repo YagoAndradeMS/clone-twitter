@@ -1,9 +1,9 @@
 'use client';
-import { ProfileFeed } from '@/components/profile/profile-feed';
-import { Button } from '@/components/ui/button';
-import { GeneralHeader } from '@/components/ui/geberal-header';
-import { useUser } from '@/hooks/useUser';
-import { stripBaseUrl } from '@/utils/getImage';
+import { ProfileFeed } from '../../../profile/profile-feed';
+import { Button } from '../../../ui/button';
+import { GeneralHeader } from '../../../ui/geberal-header';
+import { useUser } from '../../../../hooks/useUser';
+import { stripBaseUrl } from '../../../../utils/getImage';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';

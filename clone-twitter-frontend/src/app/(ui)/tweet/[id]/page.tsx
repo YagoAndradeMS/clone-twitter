@@ -1,7 +1,7 @@
-import { TweetItem } from '@/components/tweet/tweet-itm';
-import { TweetPost } from '@/components/tweet/tweet-post';
-import { GeneralHeader } from '@/components/ui/geberal-header';
-import { tweet } from '@/data/tweet';
+import { TweetItem } from '../../../../components/tweet/tweet-itm';
+import { TweetPost } from '../../../../components/tweet/tweet-post';
+import { GeneralHeader } from '../../../../components/ui/geberal-header';
+import { tweet } from '../../../../data/tweet';
 
 export default function page() {
   return (

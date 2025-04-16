@@ -1,4 +1,4 @@
-import { Tweet } from '@/types/tweet';
+import { Tweet } from '../types/tweet';
 import { user } from './user';
 
 export const tweet: Tweet = {

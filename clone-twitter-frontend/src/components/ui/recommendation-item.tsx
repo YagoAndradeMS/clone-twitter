@@ -1,16 +1,22 @@
 'use client';
-import { User } from '@/types/user';
 import Link from 'next/link';
 import { Button } from './button';
 import { useState } from 'react';
+import { following } from '../../types/following';
+import { stripBaseUrl } from '../../utils/getImage';
+import { api } from '../../utils/api';
 
 type Props = {
-  user: User;
+  user: following;
 };
 
 export const RecommendationItem = ({ user }: Props) => {
   const [followind, setFollowing] = useState(false);
-  const handleFollowButton = () => {
+  const handleFollowButton = async () => {
+    try {
+      const res = await api.post(`/user/${user.slug}/follow`);
+      console.log(res);
+    } catch (error) {}
     setFollowing(true);
   };
 
@@ -18,7 +24,11 @@ export const RecommendationItem = ({ user }: Props) => {
     <div className='flex items-center'>
       <div className='size-10 mr-2 rounded-full overflow-hidden'>
         <Link href={`/${user.slug}`}>
-          <img src={user.avatar} alt={user.name} className='size-full' />
+          <img
+            src={stripBaseUrl(user.avatar)}
+            alt={user.name}
+            className='size-full'
+          />
         </Link>
       </div>
 

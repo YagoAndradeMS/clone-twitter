@@ -1,6 +1,6 @@
 'use client';
-import { Tweet } from '@/types/tweet';
-import { formatRelativeTime } from '@/utils/format-relative';
+import { Tweet } from '../../types/tweet';
+import { formatRelativeTime } from '../../utils/format-relative';
 import { faComment, faHeart } from '@fortawesome/free-regular-svg-icons';
 import {
   faRetweet,

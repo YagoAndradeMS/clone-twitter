@@ -1,4 +1,4 @@
-import { tweet } from '@/data/tweet';
+import { tweet } from '../../data/tweet';
 import { TweetItem } from '../tweet/tweet-itm';
 
 export const ProfileFeed = () => {
