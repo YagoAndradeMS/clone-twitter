@@ -12,25 +12,23 @@ export const verifyJWT = (
   res: Response,
   next: NextFunction
 ): void => {
-  const authHeader = req.headers['authorization'];
-  if (!authHeader) {
+  const token = req.cookies.token; // Pega o token diretamente dos cookies
+
+  if (!token) {
     res.status(401).json({ error: 'Acesso negado' });
     return;
   }
 
-  const token = authHeader.split(' ')[1];
-
   jwt.verify(
     token,
     process.env.JWT_SECRET as string,
-    async (error, decoded: any) => {
+    async (error: any, decoded: any) => {
       if (error) {
         return res.status(401).json({ error: 'Acesso negado' });
       }
 
       const user = await findUserBySlug(decoded.slug);
       if (!user) {
-        // Ajuste: antes estava verificando se o usuário existia incorretamente
         return res.status(401).json({ error: 'Acesso negado' });
       }
 

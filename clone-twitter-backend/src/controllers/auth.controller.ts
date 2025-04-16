@@ -56,8 +56,14 @@ export const signup: RequestHandler = async (req, res) => {
   const token = createJWT(userSlug);
 
   // Retornar o resultado (token, user)
+  res.cookie('token', token, {
+    httpOnly: true,
+    secure: false,
+    sameSite: 'lax',
+    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 dias
+  });
+
   res.status(201).json({
-    token,
     user: {
       name: newUser.name,
       slug: newUser.slug,
@@ -90,8 +96,14 @@ export const signin: RequestHandler = async (req, res) => {
 
   const token = createJWT(user.slug);
 
-  res.json({
-    token,
+  res.cookie('token', token, {
+    httpOnly: true,
+    secure: false,
+    sameSite: 'lax',
+    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 dias
+  });
+
+  res.status(201).json({
     user: {
       name: user.name,
       slug: user.slug,

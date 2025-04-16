@@ -15,8 +15,11 @@ import { findTweetsByUser } from '../services/tweet.service';
 import { updateUserSchema } from '../schemas/update-user';
 
 export const getUser = async (req: ExtendedRequest, res: Response) => {
-  const { slug } = req.params;
+  const slug = req.userSlug;
 
+  if (!slug) {
+    throw new Error('Erro slug invalido');
+  }
   const user = await findUserBySlug(slug);
   if (!user) {
     res.json({ error: 'Usuario inexistente' });
